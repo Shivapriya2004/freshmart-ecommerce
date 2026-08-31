@@ -1,0 +1,441 @@
+/* ============================================
+   FreshMart — Custom CSS (single-page version)
+   ============================================ */
+
+:root {
+  --cream: #faf6ec;
+  --cream-dark: #f2ecdc;
+  --dark-green: #163d2e;
+  --medium-green: #2f7d54;
+  --medium-green-hover: #26663f;
+  --light-green: #cfead9;
+  --light-green-accent: #e7f5ec;
+  --white: #ffffff;
+  --text-muted: #5c6b63;
+  --shadow: 0 8px 24px rgba(22, 61, 46, 0.08);
+  --shadow-hover: 0 14px 32px rgba(22, 61, 46, 0.14);
+  --radius: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--dark-green);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  padding-top: 72px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--dark-green);
+  font-weight: 700;
+}
+
+a { text-decoration: none; }
+
+section { scroll-margin-top: 80px; }
+
+/* ---------- Navbar ---------- */
+.navbar-freshmart {
+  background-color: var(--white);
+  box-shadow: 0 2px 12px rgba(22, 61, 46, 0.08);
+}
+
+.navbar-freshmart .navbar-brand {
+  color: var(--dark-green) !important;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar-freshmart .navbar-brand span { color: var(--medium-green); }
+
+.navbar-freshmart .nav-link {
+  color: var(--dark-green) !important;
+  font-weight: 500;
+  margin: 0 6px;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.navbar-freshmart .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--medium-green);
+  transition: width 0.25s ease;
+}
+
+.navbar-freshmart .nav-link:hover::after,
+.navbar-freshmart .nav-link.active::after { width: 100%; }
+
+.navbar-freshmart .nav-link:hover { color: var(--medium-green) !important; }
+
+.cart-badge {
+  background-color: var(--medium-green);
+  color: var(--white);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  margin-left: 4px;
+}
+
+.btn-cart-nav {
+  background-color: var(--light-green-accent);
+  color: var(--medium-green);
+  border: 1px solid var(--light-green);
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 6px 18px;
+  transition: all 0.2s ease;
+}
+
+.btn-cart-nav:hover {
+  background-color: var(--medium-green);
+  border-color: var(--medium-green);
+  color: var(--white);
+}
+
+/* ---------- Buttons ---------- */
+.btn-fresh {
+  background-color: var(--medium-green);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 28px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-fresh:hover { background-color: var(--medium-green-hover); color: var(--white); transform: translateY(-2px); }
+.btn-fresh:disabled { opacity: 0.7; transform: none; cursor: not-allowed; }
+
+.btn-fresh-outline {
+  background-color: transparent;
+  color: var(--medium-green);
+  border: 2px solid var(--medium-green);
+  border-radius: 50px;
+  padding: 8px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-fresh-outline:hover { background-color: var(--medium-green); color: var(--white); }
+
+.btn-add {
+  background-color: var(--light-green-accent);
+  color: var(--medium-green);
+  border: 1px solid var(--light-green);
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 6px 18px;
+  transition: all 0.2s ease;
+}
+
+.btn-add:hover { background-color: var(--medium-green); border-color: var(--medium-green); color: var(--white); }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--light-green-accent) 0%, var(--cream) 60%);
+  border-radius: var(--radius);
+  padding: 70px 40px;
+  margin-top: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero h1 { font-size: 2.9rem; line-height: 1.2; }
+.hero p.lead { color: var(--text-muted); font-size: 1.2rem; }
+
+.hero-tag {
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--medium-green);
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--medium-green);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+
+.hero-img-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+.floating-card {
+  position: absolute;
+  bottom: -18px;
+  left: -18px;
+  background-color: var(--white);
+  border-radius: 14px;
+  box-shadow: var(--shadow-hover);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.floating-card .icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--light-green-accent);
+  color: var(--medium-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.floating-card .title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0; }
+.floating-card .subtitle { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 0; }
+
+/* ---------- Section titles ---------- */
+.section-title { margin-bottom: 40px; }
+.section-title h2 { font-size: 2rem; }
+.section-title p { color: var(--text-muted); }
+
+/* ---------- Category cards ---------- */
+.category-card {
+  background-color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+
+.category-img-wrap { width: 100%; height: 220px; overflow: hidden; }
+.category-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+.category-card:hover .category-img-wrap img { transform: scale(1.06); }
+
+.category-card .card-body { padding: 22px 24px; }
+
+/* ---------- Product cards ---------- */
+.product-card {
+  background-color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+
+.product-img-wrap { width: 100%; height: 190px; overflow: hidden; background-color: var(--light-green-accent); }
+.product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+.product-card:hover .product-img-wrap img { transform: scale(1.06); }
+
+.product-card .card-body { padding: 18px 20px 20px; }
+.product-name { font-weight: 700; font-size: 1.05rem; margin-bottom: 2px; }
+.product-price { color: var(--medium-green); font-weight: 700; font-size: 1.1rem; }
+.product-unit { color: var(--text-muted); font-size: 0.85rem; }
+
+.category-pill {
+  display: inline-block;
+  background-color: var(--light-green-accent);
+  color: var(--medium-green);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+}
+
+/* ---------- Offcanvas Cart ---------- */
+.offcanvas-freshmart { background-color: var(--cream); }
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.cart-item:last-child { border-bottom: none; }
+
+.cart-item-img { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; margin-right: 12px; }
+
+.qty-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--light-green);
+  background-color: var(--light-green-accent);
+  color: var(--medium-green);
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.qty-btn:hover { background-color: var(--medium-green); color: var(--white); }
+
+.cart-empty { text-align: center; color: var(--text-muted); padding: 40px 0; }
+
+.cart-total-row {
+  border-top: 2px dashed var(--light-green);
+  margin-top: 14px;
+  padding-top: 14px;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* ---------- Forms ---------- */
+.form-panel {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--medium-green);
+  box-shadow: 0 0 0 0.2rem rgba(47, 125, 84, 0.18);
+}
+
+.form-label { font-weight: 600; color: var(--dark-green); }
+
+/* ---------- Contact ---------- */
+.contact-icon-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 20px;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.contact-icon-card:hover { transform: translateY(-6px); }
+
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--light-green-accent);
+  color: var(--medium-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin: 0 auto 16px;
+}
+
+.map-placeholder {
+  background-color: var(--light-green-accent);
+  border: 2px dashed var(--light-green);
+  border-radius: var(--radius);
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--medium-green);
+}
+
+/* ---------- Login ---------- */
+.login-wrap { max-width: 460px; margin: 0 auto; }
+
+/* ---------- Footer ---------- */
+footer.site-footer {
+  background-color: var(--dark-green);
+  color: var(--light-green-accent);
+  margin-top: 60px;
+  padding: 46px 0 20px;
+}
+
+footer.site-footer h5 { color: var(--white); }
+
+footer.site-footer a {
+  color: var(--light-green-accent);
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+footer.site-footer a:hover { opacity: 1; color: var(--white); }
+
+footer.site-footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 24px;
+  padding-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* ---------- Confirmation / account pages ---------- */
+.status-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.status-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hover);
+  padding: 44px;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+}
+
+.status-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: var(--light-green-accent);
+  color: var(--medium-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin: 0 auto 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.detail-row:last-child { border-bottom: none; }
+.detail-label { font-weight: 600; color: var(--text-muted); }
+.detail-value { color: var(--dark-green); font-weight: 600; text-align: right; max-width: 60%; }
+
+/* ---------- Misc ---------- */
+.text-medium-green { color: var(--medium-green); }
+.bg-light-green { background-color: var(--light-green-accent); }
+
+@media (max-width: 767px) {
+  .hero { padding: 40px 20px; text-align: center; }
+  .floating-card { position: static; margin-top: -30px; display: inline-flex; }
+}
